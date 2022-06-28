@@ -214,7 +214,7 @@ void Update(float dt){
 
 void SimulationStep(){
     auto vis = VehicleState::ViewingPlayerState();
-    surface = vis.FLGroundContactMaterial;
+    surface = CSceneVehicleVisState::EPlugSurfaceMaterialId(vis.FLGroundContactMaterial);
     if(vis.FLSlipCoef > 0 and surface != CSceneVehicleVisState::EPlugSurfaceMaterialId::XXX_Null ){
         isDrifting = true;
     }
